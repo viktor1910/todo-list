@@ -73,9 +73,9 @@ This section list all major frameworks, libary that I built my project using.
 ## Getting Started
 
 ### Prerequisites
-* npm
+* yarn
   ```sh
-  npm install npm@latest -g
+  yarn
   ```
 
 ### Installation
