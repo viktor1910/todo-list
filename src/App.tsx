@@ -3,6 +3,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Paper, Typography } from '@material-ui/core';
 import ListOfTodo from './components/ListOfTodo';
+import AddMoreTodo from './components/AddMoreTodo';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,6 +29,7 @@ function App() {
           <Paper className={classes.paper}>
             <Typography component="h1" variant="h2">Todo List</Typography>
             <ListOfTodo />
+            <AddMoreTodo />
           </Paper>
         </Container>
       </div>
