@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { ListItem, Typography } from '@material-ui/core';
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import { Todo } from '../utils/todos'
 
 const useStyles = makeStyles((theme) => ({
     todoIcon: {
@@ -19,14 +20,14 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-interface TodoProps {
-    title: string,
-    completed: boolean
+type TodoProps = {
+    todo: Todo
 }
 
 
-const SingleTodo: React.FC<TodoProps> = ({ title, completed }) => {
+const SingleTodo: React.FC<TodoProps> = ({ todo }) => {
     const classes = useStyles();
+    const { title, completed } = todo
     const [done, setDone] = useState(false);
     const handleClickDone = () => {
         setDone(!done)
