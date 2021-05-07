@@ -19,8 +19,13 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
+interface TodoProps {
+    title: string,
+    completed: boolean
+}
 
-const SingleTodo: React.FC = () => {
+
+const SingleTodo: React.FC<TodoProps> = ({ title, completed }) => {
     const classes = useStyles();
     const [done, setDone] = useState(false);
     const handleClickDone = () => {
@@ -28,8 +33,8 @@ const SingleTodo: React.FC = () => {
     }
     return (
         <ListItem onClick={handleClickDone} divider dense>
-            {done ? <CheckCircleOutlineIcon className={classes.todoIcon} /> : <RadioButtonUncheckedIcon className={classes.todoIcon} />}
-            <Typography className={classes.text}>something 2</Typography>
+            {completed ? <CheckCircleOutlineIcon className={classes.todoIcon} /> : <RadioButtonUncheckedIcon className={classes.todoIcon} />}
+            <Typography className={classes.text}>{title}</Typography>
         </ListItem>
     )
 }
