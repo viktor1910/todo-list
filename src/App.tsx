@@ -7,8 +7,8 @@ import AddMoreTodo from './components/AddMoreTodo';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: '100vw',
-    height: '100vh',
+    width: '100%',
+    height: '100%',
     backgroundColor: theme.palette.grey[300],
   },
   mainContent: {

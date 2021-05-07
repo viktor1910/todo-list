@@ -80,18 +80,13 @@ This section list all major frameworks, libary that I built my project using.
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/viktor1910/todo-list.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
+   yarn
    ```
 
 <!-- LICENSE -->
@@ -102,4 +97,4 @@ This section list all major frameworks, libary that I built my project using.
 
 Viktor Nguyen - [vu.nguyen19.10](https://www.facebook.com/vu.nguyen19.10/) - nguyenvu19.dev@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [https://github.com/viktor1910/todo-list](https://github.com/viktor1910/todo-list)
