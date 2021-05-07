@@ -1,15 +1,9 @@
 import axios from 'axios';
+import {Todo} from './todos'
 
 export const api = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com/',
 })
-
-interface Todo {
-    userId: number,
-    id: number,
-    title: string,
-    completed: boolean
-}
 
 export const fetchTodos = (): Promise<Todo[]> => {
     const fetchData = api.get('/todos?userId=2');
