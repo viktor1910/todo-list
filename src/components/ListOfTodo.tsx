@@ -15,7 +15,9 @@ const useStyles = makeStyles((theme) => ({
 
 const ListOfTodo = () => {
     const classes = useStyles();
-    const todos = useQuery<Todo[], Error>('todos', fetchTodos)
+    const todos = useQuery<Todo[], Error>('todos', fetchTodos, {
+        staleTime: 5000
+    })
     return (
         <div className={classes.root}>
             <List>
