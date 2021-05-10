@@ -1,4 +1,6 @@
 import React from 'react';
+import { useQueryClient } from 'react-query';
+import { fetchTodos } from './utils/apiHelper';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Paper, Typography } from '@material-ui/core';
@@ -21,11 +23,12 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
+  const queryClient = useQueryClient()
   return (
     <>
       <CssBaseline />
-      <div className={classes.root}>
-        <Container maxWidth='md' component="main" className={classes.mainContent}>
+      <div className={classes.root} >
+        <Container maxWidth='md' component="main" className={classes.mainContent} onLoad={async () => await queryClient.prefetchQuery('todos', fetchTodos)}>
           <Paper className={classes.paper}>
             <Typography component="h1" variant="h2">Todo List</Typography>
             <ListOfTodo />
