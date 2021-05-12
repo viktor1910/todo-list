@@ -21,7 +21,7 @@ const ListOfTodo = () => {
     return (
         <div className={classes.root}>
             <List>
-                {todos.data?.map(todo => <SingleTodo todo={todo} />)}
+                {todos.data?.map(todo => <SingleTodo todo={todo} key={todo.id}/>)}
             </List>
         </div>
     )
