@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { useMutation } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
 import { addTodo } from '../utils/apiHelper'
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, Dialog, DialogTitle, DialogContent, TextField } from '@material-ui/core';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
+import { Todo } from '../utils/todos';
 
 const useStyles = makeStyles((theme) => ({
     buttonAction: {
@@ -17,9 +18,13 @@ const useStyles = makeStyles((theme) => ({
 
 const AddMoreTodo = () => {
     const classes = useStyles();
+    const queryCLient = useQueryClient();
     const mutation = useMutation(addTodo, {
-        onSuccess: () => { 
+        onSuccess: (data: Todo) => {
             handleCloseModal();
+            const oldData: Todo[] = queryCLient.getQueryData('todos') || [];
+            const newData = [...oldData, data]
+            queryCLient.setQueryData('todos', newData);
             formik.resetForm();
         }
     })
