@@ -19,3 +19,8 @@ export const addTodo = (todo: Todo) => {
     const postData = api.post('/todos', todo);
     return postData.then((res) => Promise.resolve(res.data)).catch((error) => error)
 }
+
+export const changeTodo = (todo: Todo) => {
+    const putData = api.put(`/todos/${todo.id}`, todo);
+    return putData.then((res) => Promise.resolve(res.data)).catch((error) => error)
+}
